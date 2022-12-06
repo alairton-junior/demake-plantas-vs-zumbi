@@ -1,14 +1,16 @@
-// Disparo X Zumbi
+
 
 void colisaoErvilhaZumbi() {
-
+  // Verifica se há zumbis em uma linha que contenha uma planta do Tipo Ervilha
   for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 5; j++) {
       for (int t = 0; t < posicoesZumbi.length; t++) {
         if (posicoesZumbi[t] != null && posicoesErvilha[i][j] != null && posicoesErvilha[i][j].y == posicoesZumbi[t].y) {
+          // Alterando propriedade da Ervilha para que ela atire
           posicoesErvilha[i][j].shot = true;
         }
         if (posicoesZumbi[t] != null && posicoesErvilha[i][j] != null && posicoesErvilha[i][j].x == posicoesZumbi[t].x) {
+          // Chamando o método para que o zumbi perca vida
           posicoesZumbi[t].perderVida();
         }
       }
@@ -29,7 +31,7 @@ void colisoesZumbiPlantas() {
               posicoesGirassol[i][j].perderVida();
               if (posicoesGirassol[i][j].life <= 0) {
                 posicoesGirassol[i][j] = null;
-                grid[i][j] = NEUTRO;
+                grid[i][j] = VAZIO;
                 posicoesZumbi[t].attacking = false;
               }
               break;
@@ -37,7 +39,7 @@ void colisoesZumbiPlantas() {
               posicoesNoz[i][j].perderVida();
               if (posicoesNoz[i][j].life <= 0) {
                 posicoesNoz[i][j] = null;
-                grid[i][j] = NEUTRO;
+                grid[i][j] = VAZIO;
                 posicoesZumbi[t].attacking = false;
               }
               break;
@@ -45,7 +47,7 @@ void colisoesZumbiPlantas() {
               posicoesErvilha[i][j].perderVida();
               if (posicoesErvilha[i][j].life <= 0) {
                 posicoesErvilha[i][j] = null;
-                grid[i][j] = NEUTRO;
+                grid[i][j] = VAZIO;
                 posicoesZumbi[t].attacking = false;
               }
               break;

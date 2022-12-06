@@ -45,12 +45,9 @@ void verificaPosicao() {
 
 
 void selecaoMouseRender() {
-  /*if(mousePressed && estado != NEUTRO) {
-   estado = NEUTRO;
-   }*/
-
+ // Exibe o sprite da planta selecionada no mouseX e mouseY
   switch (estado) {
-  case NEUTRO:
+  case VAZIO:
 
     break;
   case GIRASSOL:
@@ -68,26 +65,27 @@ void selecaoMouseRender() {
   }
 }
 void addPlanta(int x, int y) {
+  // Adiciona planta no tabuleiro 
   switch (estado) {
-  case NEUTRO:
-    grid[x][y] = NEUTRO;
+  case VAZIO:
+    grid[x][y] = VAZIO;
     break;
   case GIRASSOL:
 
-    if (sol >= 50 && grid[x][y] == NEUTRO) {
+    if (sol >= 50 && grid[x][y] == VAZIO) {
       sol-=50;
       grid[x][y] = GIRASSOL;
     }
     break;
   case NOZ:
-    if (sol >= 50 && grid[x][y] == NEUTRO) {
+    if (sol >= 50 && grid[x][y] == VAZIO) {
       sol-=50;
       grid[x][y] = NOZ;
     }
 
     break;
   case ERVILHA:
-    if (sol >= 100 && grid[x][y] == NEUTRO) {
+    if (sol >= 100 && grid[x][y] == VAZIO) {
       sol-=100;
       grid[x][y] = ERVILHA;
     }

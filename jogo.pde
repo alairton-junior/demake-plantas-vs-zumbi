@@ -21,7 +21,7 @@ void reset() {
   play = true;
   intervaloTempoZumbi = 800;
   tempoZumbi = 0;
-  estado = NEUTRO;
+  estado = VAZIO;
   sol = 0;
   quant = 0;
   intervaloTempoSol = 400;

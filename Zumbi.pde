@@ -35,6 +35,7 @@ class Zumbi {
       }
     }
   }
+  
   void perderVida () {
 
     this.life -= 20;
@@ -53,9 +54,7 @@ class Zumbi {
 }
 
 void geraZumbi() {
-
   if (play) {
-
     if (tempoZumbi == intervaloTempoZumbi) {
       if (quant < 20) {
         intervaloTempoZumbi = int(random(400, 600));

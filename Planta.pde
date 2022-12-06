@@ -16,7 +16,7 @@ class Girassol extends Planta {
     this.y = y;
     this.life = 100;
     this.cost = 50;
-    this.time = 420;
+    this.time = 480;
     this.img = girassol_a;
     this.count = 0;
   }
@@ -31,7 +31,7 @@ class Girassol extends Planta {
       this.img = girassol_recarga;
       if (this.time <= 0) {
         sol+=25;
-        this.time = 420;
+        this.time = 480;
         this.img = girassol_a;
       }
     }

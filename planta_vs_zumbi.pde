@@ -7,6 +7,7 @@ void setup() {
   font = createFont("font.ttf", 20);
   textFont(font);
 
+  // Sprites 
   button_girassol = loadImage("girassol.png");
   button_noz = loadImage("noz.png");
   button_ervilha = loadImage("ervilha.png");
@@ -38,6 +39,8 @@ void draw() {
   recarregaSol();
   zumbiUltrapassou();
   ganhou();
+
+  // Chamadas de Game Over
   if(!play && zumbiMortos != 20) {
     encerrarJogo("GAME OVER");
   }
